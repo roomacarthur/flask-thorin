@@ -18,7 +18,9 @@
 <div class="row featurette">
   {% if loop.index % 2 != 0 %}
   <div class="col-md-7">
-    <h3>{{loop.index}}. {{ member.name }}</h3>
+    <h3>
+      <a href="/about/{{ member.url }}">{{loop.index}}. {{ member.name }}</a>
+    </h3>
     <p>{{ member.description }}</p>
   </div>
   <div class="col-md-5">
@@ -37,11 +39,13 @@
     />
   </div>
   <div class="col-md-7">
-    <h3>{{loop.index}}. {{ member.name }}</h3>
+    <h3>
+      <a href="/about/{{ member.url }}">{{loop.index}}. {{ member.name }}</a>
+    </h3>
     <p>{{ member.description }}</p>
   </div>
   {% endif %}
 </div>
-{% if loop.index != 13 %}
+{% if loop.index != loop.length %}
 <hr class="featurette-divider" />
 {% endif %} {% endfor %} {% endblock %}
